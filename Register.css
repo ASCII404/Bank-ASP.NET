@@ -1,0 +1,102 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 100px auto;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+}
+
+.login-box > #ErrorLabel {
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.textbox {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.textbox i {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #999999;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #999999;
+    outline: none;
+    font-size: 16px;
+}
+
+.textbox input:focus,
+.textbox input:valid {
+    border-color: #007bff;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0062cc;
+}
+
+.error-label {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+.login-link {
+    display: inline-block;
+    background-color: #504e4e;
+    text-decoration: none;
+    border: 2px solid #424040;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+}
+
+.login-link:hover {
+    background-color: #333;
+}
+
+.login-link > a {
+    color: white;
+    text-decoration: none;
+}
