@@ -32,7 +32,7 @@ function checkLoginStatus() {
     var isLoggedIn = getCookie("User");
     if (!isLoggedIn) {
         // Redirect to login page
-        window.location.href = "LogIn.aspx";
+        window.location.href = "/Webforms/LogIn.aspx";
     }
 }
 

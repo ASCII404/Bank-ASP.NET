@@ -7,17 +7,17 @@
 
 @font-face {
     font-family: logInFont;
-    src: url(Fonts/LEMONMILK-Regular.otf);
+    src: url(/Fonts/LEMONMILK-Regular.otf);
 }
 
 @font-face {
     font-family: navFont;
-    src: url(Fonts/KGRedHands.ttf);
+    src: url(/Fonts/KGRedHands.ttf);
 }
 
 @font-face {
     font-family: pFont;
-    src: url(Fonts/SimplyMono-Bold.ttf);
+    src: url(/Fonts/SimplyMono-Bold.ttf);
 }
 
 header {

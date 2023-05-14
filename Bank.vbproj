@@ -206,10 +206,10 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.aspx.designer.vb">
+    <Compile Include="Webforms\LogIn.aspx.designer.vb">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.aspx.vb">
+    <Compile Include="Webforms\LogIn.aspx.vb">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -229,17 +229,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
-    <Compile Include="CreditSimulator.aspx.designer.vb">
+    <Compile Include="Webforms\CreditSimulator.aspx.designer.vb">
       <DependentUpon>CreditSimulator.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CreditSimulator.aspx.vb">
+    <Compile Include="Webforms\CreditSimulator.aspx.vb">
       <DependentUpon>CreditSimulator.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.vb">
+    <Compile Include="Webforms\Register.aspx.designer.vb">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Register.aspx.vb">
+    <Compile Include="Webforms\Register.aspx.vb">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -253,8 +253,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="about.css" />
-    <Content Include="about.html" />
+    <Content Include="CSS\about.css" />
+    <Content Include="HTML\about.html" />
     <Content Include="App_Data\BankDTB.mdf" />
     <Content Include="App_Data\BankDTB_log.ldf">
       <DependentUpon>BankDTB.mdf</DependentUpon>
@@ -291,10 +291,10 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="CreditSimulator.css" />
-    <Content Include="LogIn.aspx" />
-    <Content Include="LogIn.css" />
-    <Content Include="CreditSimulator.aspx" />
+    <Content Include="CSS\CreditSimulator.css" />
+    <Content Include="Webforms\LogIn.aspx" />
+    <Content Include="CSS\LogIn.css" />
+    <Content Include="Webforms\CreditSimulator.aspx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -304,18 +304,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
-    <Content Include="LogIn_session.js" />
-    <Content Include="main_page.css" />
-    <Content Include="page_functionality.js" />
-    <Content Include="Register.aspx" />
-    <Content Include="Register.css" />
+    <Content Include="JS\LogIn_session.js" />
+    <Content Include="CSS\main_page.css" />
+    <Content Include="JS\page_functionality.js" />
+    <Content Include="Webforms\Register.aspx" />
+    <Content Include="CSS\Register.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -345,7 +339,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="main_page.html" />
+    <Content Include="HTML\main_page.html" />
     <Content Include="WADProjectDatabase.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

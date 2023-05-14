@@ -5,21 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Credit simulator</title>
-    <link href="main_page.css" rel="stylesheet" type="text/css"/>
-    <link href="CreditSimulator.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/main_page.css" rel="stylesheet" type="text/css"/>
+    <link href="/CSS/CreditSimulator.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="page_functionality.js" defer></script>
+    <script src="/JS/page_functionality.js" defer></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
             <nav>
                 <ul>
-                    <li><a href="main_page.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="CreditSimulator.aspx" class="nav-link">Loan</a></li>
+                    <li><a href="/HTML/main_page.html" class="nav-link">Home</a></li>
+                    <li><a href="/HTML/about.html" class="nav-link">About</a></li>
+                    <li><a href="/Webforms/CreditSimulator.aspx" class="nav-link">Loan</a></li>
                     <li><a href="#" class="nav-link">Account</a></li>
-                    <li><a href="LogIn.aspx" class="log_out" id="logOut">Log out</a></li>
+                    <li><a href="/Webforms/LogIn.aspx" class="log_out" id="logOut">Log out</a></li>
                 </ul>
                 <div id="user_div">GUEST</div>
 
@@ -81,6 +81,6 @@
             <p>Copyright &copy; 2023</p>
         </footer>
     </form>
-    <script src="LogIn_session.js"></script>
+    <script src="/JS/LogIn_session.js"></script>
 </body>
 </html>

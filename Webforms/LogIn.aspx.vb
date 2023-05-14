@@ -31,7 +31,7 @@ Public Class LogIn
                         Response.Cookies.Add(userCookie)
 
                         ' Redirect to main_page.html
-                        Response.Redirect("~/main_page.html")
+                        Response.Redirect("/HTML/main_page.html")
                     Else
                         ' If the password does not match, display an error message
                         ErrorLabel.Text = "Invalid username or password."

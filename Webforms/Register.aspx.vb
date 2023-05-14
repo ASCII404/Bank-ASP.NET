@@ -36,7 +36,7 @@ Public Class Register
                     command.ExecuteNonQuery()
 
                     ' Registration successful, redirect to a success page or perform any other actions
-                    Response.Redirect("LogIn.aspx")
+                    Response.Redirect("/Webforms/LogIn.aspx")
                 Catch ex As Exception
                     ' Error occurred, display error message or perform any other error handling
                     ErrorLabel.Text = "An error occurred during registration."
