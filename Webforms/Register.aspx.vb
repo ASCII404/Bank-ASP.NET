@@ -23,22 +23,19 @@ Public Class Register
         ' Create connection and command objects
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
-                ' Add parameters
+
                 command.Parameters.AddWithValue("@UserName", username)
                 command.Parameters.AddWithValue("@Password", password)
                 command.Parameters.AddWithValue("@email", email)
 
                 Try
-                    ' Open the connection
                     connection.Open()
-
-                    ' Execute the query
                     command.ExecuteNonQuery()
 
                     ' Registration successful, redirect to a success page or perform any other actions
                     Response.Redirect("/Webforms/LogIn.aspx")
                 Catch ex As Exception
-                    ' Error occurred, display error message or perform any other error handling
+                    ' Error occurred, display error message
                     ErrorLabel.Text = "An error occurred during registration."
                 End Try
             End Using

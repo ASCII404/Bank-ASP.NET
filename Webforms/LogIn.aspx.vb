@@ -12,7 +12,6 @@ Public Class LogIn
         Dim connectionString As String = "Data Source=aspnetgunter.database.windows.net;Initial Catalog=aspnetgustav2;User ID=gunter;Password=PentaSKT12#;"
         Using connection As New SqlConnection(connectionString)
             Try
-                ' Open the connection
                 connection.Open()
 
                 ' Create a SQL command to retrieve the user with the entered username
@@ -29,8 +28,6 @@ Public Class LogIn
                         Dim userCookie As New HttpCookie("User", username)
                         ' Add the cookie to the response
                         Response.Cookies.Add(userCookie)
-
-                        ' Redirect to main_page.html
                         Response.Redirect("/HTML/main_page.html")
                     Else
                         ' If the password does not match, display an error message

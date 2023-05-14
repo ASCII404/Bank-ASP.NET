@@ -37,11 +37,11 @@ nav {
 }
 
 nav a {
-    color: #333; /* Default link color */
+    color: #333;
 }
 
 nav a.active {
-    color: red; /* Active link color */
+    color: red; 
 }
 
 nav ul {
@@ -100,13 +100,13 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    overflow-y: scroll; /* Use "scroll" instead of "auto" */
+    overflow-y: scroll; 
     height: 100vh;
 }
 
-/* Hide the scrollbar track */
+
 .wrapper::-webkit-scrollbar {
-    width: 0; /* Set the width to 0 */
+    width: 0;
     background-color: transparent;
 }
 

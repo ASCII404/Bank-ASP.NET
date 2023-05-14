@@ -206,6 +206,13 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Webforms\Account.aspx.designer.vb">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\Account.aspx.vb">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Webforms\LogIn.aspx.designer.vb">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
@@ -292,6 +299,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="CSS\CreditSimulator.css" />
+    <Content Include="Webforms\Account.aspx" />
     <Content Include="Webforms\LogIn.aspx" />
     <Content Include="CSS\LogIn.css" />
     <Content Include="Webforms\CreditSimulator.aspx" />
