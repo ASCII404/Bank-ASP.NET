@@ -1,0 +1,125 @@
+﻿body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+@font-face {
+    font-family: logInFont;
+    src: url(Fonts/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: navFont;
+    src: url(Fonts/KGRedHands.ttf);
+}
+
+@font-face {
+    font-family: pFont;
+    src: url(Fonts/SimplyMono-Bold.ttf);
+}
+
+header {
+    background-color: red;
+}
+
+nav {
+    background-color: #333;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+nav a {
+    color: #333; /* Default link color */
+}
+
+nav a.active {
+    color: red; /* Active link color */
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+.nav-link {
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: navFont;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    min-height: calc(100% - 80px);
+}
+
+main {
+    flex: 1;
+}
+
+
+nav > a.log_out {
+    color: white;
+    float: right;
+    text-decoration: none;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    font-family: logInFont;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    margin-top: 50px;
+    height: 150px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-y: scroll; /* Use "scroll" instead of "auto" */
+    height: 100vh;
+}
+
+/* Hide the scrollbar track */
+.wrapper::-webkit-scrollbar {
+    width: 0; /* Set the width to 0 */
+    background-color: transparent;
+}
+
+/* Hide the scrollbar on Firefox */
+.wrapper {
+    scrollbar-width: none; /* Set the scrollbar width to none */
+}
+
+#user_div {
+    color: white;
+    float: right;
+    text-decoration: none;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    font-family: logInFont;
+}

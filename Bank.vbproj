@@ -253,6 +253,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.css" />
+    <Content Include="about.html" />
     <Content Include="App_Data\BankDTB.mdf" />
     <Content Include="App_Data\BankDTB_log.ldf">
       <DependentUpon>BankDTB.mdf</DependentUpon>
@@ -289,6 +291,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="CreditSimulator.css" />
     <Content Include="LogIn.aspx" />
     <Content Include="LogIn.css" />
     <Content Include="CreditSimulator.aspx" />
@@ -310,6 +313,7 @@
     <None Include="packages.config" />
     <Content Include="LogIn_session.js" />
     <Content Include="main_page.css" />
+    <Content Include="page_functionality.js" />
     <Content Include="Register.aspx" />
     <Content Include="Register.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />

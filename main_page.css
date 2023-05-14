@@ -1,7 +1,9 @@
 ﻿body {
     margin: 0;
     height: 100%;
+    overflow: hidden;
 }
+
 
 @font-face {
     font-family: logInFont;
@@ -32,6 +34,14 @@ nav {
     justify-content: center;
 }
 
+nav a {
+    color: #333; /* Default link color */
+}
+
+nav a.active {
+    color: red; /* Active link color */
+}
+
 nav ul{
     display: inline-block;
     list-style-type: none;
@@ -46,19 +56,16 @@ nav li{
     display: inline-block;
 }
 
+.nav-link{
+
+}
+
 li a {
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
     font-family: navFont;
-}
-
-.main-content {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    min-height: calc(100% - 80px);
 }
 
 main {
@@ -71,6 +78,27 @@ main {
     justify-content: center;
     align-items: center;
     padding: 50px;
+
+}
+
+.image-container > img {
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ddd;
+}
+
+#text1 {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#text2 {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+#text3 {
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .text-container {
@@ -143,7 +171,21 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    overflow-y: scroll; /* Use "scroll" instead of "auto" */
+    height: 100vh;
 }
+
+    /* Hide the scrollbar track */
+    .wrapper::-webkit-scrollbar {
+        width: 0; /* Set the width to 0 */
+        background-color: transparent;
+    }
+
+/* Hide the scrollbar on Firefox */
+.wrapper {
+    scrollbar-width: none; /* Set the scrollbar width to none */
+}
+
 
 #user_div {
     color: white;
@@ -152,4 +194,8 @@ footer {
     margin-top: 5px;
     padding-bottom: 15px;
     font-family: logInFont;
+}
+
+#logOut{
+
 }
