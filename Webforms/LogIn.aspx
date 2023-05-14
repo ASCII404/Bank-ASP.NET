@@ -26,6 +26,6 @@
             </div>
         </div>
     </form>
-    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

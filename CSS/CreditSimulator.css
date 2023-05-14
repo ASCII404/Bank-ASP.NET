@@ -68,3 +68,10 @@
 #loan_type{
     text-align: center;
 }
+
+/*ssssssssssssssssssssssssssssssssssssssssssssssssssssss*/
+.center-label {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}

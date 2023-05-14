@@ -11,76 +11,74 @@
     <script src="/JS/page_functionality.js" defer></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="/HTML/main_page.html" class="nav-link">Home</a></li>
-                    <li><a href="/HTML/about.html" class="nav-link">About</a></li>
-                    <li><a href="/Webforms/CreditSimulator.aspx" class="nav-link">Loan</a></li>
-                    <li><a href="/Webforms/Account.aspx" class="nav-link">Account</a></li>
-                    <li><a href="/Webforms/LogIn.aspx" class="log_out" id="logOut">Log out</a></li>
-                </ul>
-                <div id="user_div">GUEST</div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/HTML/main_page.html" class="nav-link">Home</a></li>
+                <li><a href="/HTML/about.html" class="nav-link">About</a></li>
+                <li><a href="/Webforms/CreditSimulator.aspx" class="nav-link">Loan</a></li>
+                <li><a href="/Webforms/Account.aspx" class="nav-link">Account</a></li>
+                <li><a href="/Webforms/LogIn.aspx" class="log_out" id="logOut" onclick="logout()">Log out</a></li>
+            </ul>
+            <div id="user_div">GUEST</div>
+        </nav>
+    </header>
+    <form id="CalculatePayment" runat="server">
+ <div class="container">
 
-            </nav>
-        </header>
-        <div class="container">
             <div class="center">
-                <label for="txtName">Your name</label>
-                <input type="text" id="txtName" class="input-field" />
+                <asp:Label runat="server" Text="Your full name" CssClass=""></asp:Label>
+                <asp:TextBox ID="txtName" runat="server" CssClass="input-field"></asp:TextBox>
             </div>
 
             <div class="center">
-                <label for="txtAmount">Amount of money in $</label>
-                <input type="text" id="txtAmount" class="input-field" />
+                <asp:Label runat="server" Text="Amount of money in $" CssClass=""></asp:Label>
+                <asp:TextBox ID="txtAmount" runat="server" CssClass="input-field"></asp:TextBox>
             </div>
 
 
-            <label id="loan_type">Loan Type:</label>
+            <asp:Label runat="server" Text="Loan type" CssClass="center-label"></asp:Label>
             <div class="loans">
                 <div>
-                    <input type="radio" id="radio1" name="loanType" value="loan1" checked/>
-                    <label for="radio1">Loan 1</label>
+                    <asp:RadioButton ID="radio1" runat="server" Text="Loan 1" GroupName="loanType" Checked="True" />
                 </div>
                 <div>
-                    <input type="radio" id="radio2" name="loanType" value="loan2"/>
-                    <label for="radio2">Loan 2</label>
+                    <asp:RadioButton ID="radio2" runat="server" Text="Loan 2" GroupName="loanType" />
                 </div>
                 <div>
-                    <input type="radio" id="radio3" name="loanType" value="loan3"/>
-                    <label for="radio3">Loan 3</label>
+                    <asp:RadioButton ID="radio3" runat="server" Text="Loan 3" GroupName="loanType" />
                 </div>
                 <div>
-                    <input type="radio" id="radio4" name="loanType" value="loan4"/>
-                    <label for="radio4">Loan 4</label>
+                    <asp:RadioButton ID="radio4" runat="server" Text="Loan 4" GroupName="loanType" />
                 </div>
             </div>
+     
 
             <div class="center">
-                <label for="startDate">Start of Contract Period:</label>
-                <input type="datetime-local" id="startDate" class="input-field" />
+                <asp:Label runat="server" Text="Start of the contract period" CssClass=""></asp:Label>
+                <asp:TextBox ID="startDate" runat="server" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
             </div>
 
 
             <div class="center">
-                <label for="endDate">End of Contract Period:</label>
-                <input type="datetime-local" id="endDate" class="input-field" />
+                <asp:Label runat="server" Text="End of the contract period" CssClass=""></asp:Label>
+                <asp:TextBox ID="endDate" runat="server" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
             </div>
 
             <div class="center">
-                <button type="button" id="btnCalculate" class="button">Calculate</button>
+                <asp:Button ID="btnCalculate" runat="server" Text="Calculate" />
             </div>
 
 
-            <label id="lblResult" class="result-label"></label>
+            <asp:label id="lblResult" CssClass="result-label"></asp:label>
         </div>
 
 
+
+    </form>
         <footer>
             <p>Copyright &copy; 2023</p>
         </footer>
-    </form>
     <script src="/JS/LogIn_session.js"></script>
 </body>
 </html>

@@ -17,3 +17,11 @@ if (!homeLink.classList.contains('active')) {
     homeLink.classList.add('active');
 }
 
+function deleteCookie(name) {
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+function logout() {
+    deleteCookie('User');
+    window.location.href = '/Webforms/LogIn.aspx';
+}
