@@ -3,17 +3,18 @@ Imports System.Net
 
 Public Class LogIn
     Inherits System.Web.UI.Page
+
     Protected WithEvents LoginButton As System.Web.UI.WebControls.Button
+
     Protected Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
         Dim username As String = UsernameTextBox.Text
         Dim password As String = PasswordTextBox.Text
 
         ' Create a connection to the SQL Server database
-        Dim connectionString As String = "Data Source=aspnetgunter.database.windows.net;Initial Catalog=aspnetgustav2;User ID=gunter;Password=PentaSKT12#;"
+        Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
         Using connection As New SqlConnection(connectionString)
             Try
                 connection.Open()
-
                 ' Create a SQL command to retrieve the user with the entered username
                 Dim command As New SqlCommand("SELECT * FROM Users WHERE UserName=@UserName", connection)
                 command.Parameters.AddWithValue("@UserName", username)
@@ -24,10 +25,18 @@ Public Class LogIn
                     ' If the user exists, check if the entered password matches the stored password
                     Dim storedPassword As String = reader("Password").ToString()
                     If storedPassword = password Then
-                        ' If the password matches, set the value of the cookie
-                        Dim userCookie As New HttpCookie("User", username)
+                        ' If the password matches, retrieve the user ID
+                        Dim userId As Integer = Convert.ToInt32(reader("UserID"))
+
+                        ' Create the cookie
+                        Dim userCookie As New HttpCookie("UserInfo")
+                        userCookie.Values("Username") = username
+                        userCookie.Values("UserID") = userId.ToString()
+
                         ' Add the cookie to the response
                         Response.Cookies.Add(userCookie)
+
+                        ' Redirect to the desired page
                         Response.Redirect("/HTML/main_page.html")
                     Else
                         ' If the password does not match, display an error message
@@ -39,7 +48,6 @@ Public Class LogIn
                     ErrorLabel.Text = "Invalid username or password."
                     ErrorLabel.Visible = True
                 End If
-
             Catch ex As Exception
                 ' If the connection fails, display an error message
                 ErrorLabel.Text = "An error occurred while trying to connect to the database."

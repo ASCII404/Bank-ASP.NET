@@ -15,7 +15,7 @@ Public Class Register
         Dim email As String = EmailTextBox.Text.Trim()
 
         ' Database connection string
-        Dim connectionString As String = "Data Source=aspnetgunter.database.windows.net;Initial Catalog=aspnetgustav2;User ID=gunter;Password=PentaSKT12#;"
+        Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
 
         ' SQL query to insert user's credentials
         Dim query As String = "INSERT INTO Users (UserName, Password, email) VALUES (@UserName, @Password, @email)"

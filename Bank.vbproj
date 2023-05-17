@@ -211,6 +211,27 @@
     </Compile>
     <Compile Include="Webforms\Account.aspx.vb">
       <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webforms\AccountStatement.aspx.designer.vb">
+      <DependentUpon>AccountStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\AccountStatement.aspx.vb">
+      <DependentUpon>AccountStatement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Webforms\BankingTransactions.aspx.designer.vb">
+      <DependentUpon>BankingTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\BankingTransactions.aspx.vb">
+      <DependentUpon>BankingTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Webforms\CounterpartsManagement.aspx.designer.vb">
+      <DependentUpon>CounterpartsManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\CounterpartsManagement.aspx.vb">
+      <DependentUpon>CounterpartsManagement.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Webforms\LogIn.aspx.designer.vb">
@@ -243,6 +264,13 @@
       <DependentUpon>CreditSimulator.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Webforms\New_BankTransactions.aspx.designer.vb">
+      <DependentUpon>New_BankTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\New_BankTransactions.aspx.vb">
+      <DependentUpon>New_BankTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Webforms\Register.aspx.designer.vb">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
@@ -261,6 +289,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\about.css" />
+    <Content Include="CSS\Account.css" />
+    <Content Include="CSS\BankTransactions.css" />
     <Content Include="HTML\about.html" />
     <Content Include="App_Data\BankDTB.mdf" />
     <Content Include="App_Data\BankDTB_log.ldf">
@@ -299,7 +329,11 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="CSS\CreditSimulator.css" />
+    <Content Include="JS\credit_validator.js" />
     <Content Include="Webforms\Account.aspx" />
+    <Content Include="Webforms\AccountStatement.aspx" />
+    <Content Include="Webforms\BankingTransactions.aspx" />
+    <Content Include="Webforms\CounterpartsManagement.aspx" />
     <Content Include="Webforms\LogIn.aspx" />
     <Content Include="CSS\LogIn.css" />
     <Content Include="Webforms\CreditSimulator.aspx" />
@@ -316,6 +350,7 @@
     <Content Include="JS\LogIn_session.js" />
     <Content Include="CSS\main_page.css" />
     <Content Include="JS\page_functionality.js" />
+    <Content Include="Webforms\New_BankTransactions.aspx" />
     <Content Include="Webforms\Register.aspx" />
     <Content Include="CSS\Register.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />

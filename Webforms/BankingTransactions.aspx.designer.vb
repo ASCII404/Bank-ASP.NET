@@ -11,50 +11,59 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Account
+Partial Public Class BankingTransactions
 
     '''<summary>
-    '''accountForms control.
+    '''form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents accountForms As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''btnTransactions control.
+    '''TransactionAmount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnTransactions As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TransactionAmount As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnNewTransaction control.
+    '''ddlOptions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnNewTransaction As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddlOptions As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''btnAccountStatement control.
+    '''startDate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAccountStatement As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents startDate As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnCounterparts control.
+    '''btnSearch control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnCounterparts As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''gridViewTransactions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gridViewTransactions As Global.System.Web.UI.WebControls.GridView
 End Class

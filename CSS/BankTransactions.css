@@ -1,0 +1,93 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.filters-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.lbl-mod {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-button {
+    margin-top: 20px;
+    width: 40%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* DropDownList */
+select#ddlOptions {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+
+.form-button:hover {
+    background-color: #585858
+}
+
+.transaction-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    text-align: center;
+    max-height: 500px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}
+
+.transaction-grid {
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Border radius for rounded corners */
+    padding: 10px; /* Padding around the container */
+    max-height: 500px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}

@@ -32,6 +32,15 @@ Partial Public Class WebForm1
     Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''NameError control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents NameError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''txtAmount control.
     '''</summary>
     '''<remarks>
@@ -39,6 +48,15 @@ Partial Public Class WebForm1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtAmount As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''AmountError control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AmountError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''radio1 control.
@@ -77,6 +95,15 @@ Partial Public Class WebForm1
     Protected WithEvents radio4 As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
+    '''checkboxList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkboxList As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
     '''startDate control.
     '''</summary>
     '''<remarks>
@@ -93,6 +120,15 @@ Partial Public Class WebForm1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents endDate As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DateError control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DateError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnCalculate control.
