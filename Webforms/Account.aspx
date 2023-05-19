@@ -17,7 +17,7 @@
                 <li><a href="/HTML/main_page.html" class="nav-link">Home</a></li>
                 <li><a href="/HTML/about.html" class="nav-link">About</a></li>
                 <li><a href="/Webforms/CreditSimulator.aspx" class="nav-link">Loan</a></li>
-                <li><a href="/Webforms/Account.aspx" class="nav-link">Account</a></li>
+                <li><a href="/Webforms/Account.aspx" class="nav-link home">Account</a></li>
                 <li><a href="/Webforms/LogIn.aspx" class="log_out" id="logOut" onclick="logout()">Log out</a></li>
             </ul>
             <div id="user_div">GUEST</div>
@@ -50,6 +50,7 @@
     <footer>
         <p>&copy; 2023 Bank. All rights reserved.</p>
     </footer>
+    <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/LogIn_session.js"></script>
 </body>
 </html>

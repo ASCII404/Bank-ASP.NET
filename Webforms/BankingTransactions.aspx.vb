@@ -1,14 +1,15 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Globalization
 
 Public Class BankingTransactions
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            ' Retrieve data from the database
             RetrieveDataFromDatabase()
         End If
     End Sub
+
     Protected Sub RetrieveDataFromDatabase()
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;" ' Replace with your actual connection string
 
@@ -45,5 +46,10 @@ Public Class BankingTransactions
         ' Return a default value or handle the case when the cookie or user ID is not available
         Return 0
     End Function
+
+    Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
+    End Sub
+
 
 End Class

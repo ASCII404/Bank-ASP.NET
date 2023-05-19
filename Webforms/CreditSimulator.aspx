@@ -57,11 +57,11 @@
             </div>
 
             <div class="incomes">
-                <asp:CheckBoxList ID="checkboxList" runat="server">
-                  <asp:ListItem Text="Option 1" Value="1"></asp:ListItem>
-                  <asp:ListItem Text="Option 2" Value="2"></asp:ListItem>
-                  <asp:ListItem Text="Option 3" Value="3"></asp:ListItem>
-                  <asp:ListItem Text="Option 4" Value="4"></asp:ListItem>
+                <asp:CheckBoxList ID="checkboxList" runat="server" CssClass="td-m">
+                  <asp:ListItem Text="Personal income" Value="1" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                  <asp:ListItem Text="Allowance & gifts" Value="2" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                  <asp:ListItem Text="Non-taxable income" Value="3" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                  <asp:ListItem Text="Scholarship" Value="4" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
                 </asp:CheckBoxList>
             </div>
             <div class="center">
@@ -80,7 +80,7 @@
             </div>
 
             <div class="center">
-                <asp:Button ID="btnCalculate" runat="server" Text="Calculate" OnClientClick="return validateAmount();" />
+                <asp:Button ID="btnCalculate" runat="server" Text="Calculate" OnClick="btnCalculate_Click" />
             </div>
 
             <asp:Label ID="lblResult" CssClass="result-label"></asp:Label>

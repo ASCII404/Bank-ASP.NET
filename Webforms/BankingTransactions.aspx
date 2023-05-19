@@ -18,7 +18,7 @@
                 <li><a href="/HTML/main_page.html" class="nav-link">Home</a></li>
                 <li><a href="/HTML/about.html" class="nav-link">About</a></li>
                 <li><a href="/Webforms/CreditSimulator.aspx" class="nav-link">Loan</a></li>
-                <li><a href="/Webforms/Account.aspx" class="nav-link">Account</a></li>
+                <li><a href="/Webforms/Account.aspx" class="nav-link home">Account</a></li>
                 <li><a href="/Webforms/LogIn.aspx" class="log_out" id="logOut" onclick="logout()">Log out</a></li>
             </ul>
             <div id="user_div">GUEST</div>
@@ -30,7 +30,7 @@
                 <div class="filters">
                     <div class="options">
                         <asp:Label runat="server" Text="Transaction Amount" CssClass="lbl-mod"></asp:Label>
-                        <asp:TextBox ID="TransactionAmount" runat="server" CssClass="input-field"></asp:TextBox>
+                        <asp:TextBox ID="TransAmount" runat="server" CssClass="input-field"></asp:TextBox>
                     </div>
                     <div class="options">
                         <asp:Label runat="server" Text="Type of Transaction" CssClass="lbl-mod"></asp:Label>
@@ -49,7 +49,7 @@
                         <asp:TextBox ID="startDate" runat="server" AutoPostBack="true" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
                     </div>
                 </div>
-                <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="form-button" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="form-button" OnClick="btnSearch_Click" />
             </div>
             <div class="transaction-container">
                 <asp:GridView ID="gridViewTransactions" runat="server" CssClass="transaction-grid" AutoGenerateColumns="false">
@@ -67,6 +67,7 @@
     <footer>
         <p>&copy; 2023 Bank. All rights reserved.</p>
     </footer>
+    <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/LogIn_session.js"></script>
 </body>
 </html>

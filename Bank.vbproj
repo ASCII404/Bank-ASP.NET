@@ -290,6 +290,7 @@
   <ItemGroup>
     <Content Include="CSS\about.css" />
     <Content Include="CSS\Account.css" />
+    <Content Include="CSS\AccountStatement.css" />
     <Content Include="CSS\BankTransactions.css" />
     <Content Include="HTML\about.html" />
     <Content Include="App_Data\BankDTB.mdf" />

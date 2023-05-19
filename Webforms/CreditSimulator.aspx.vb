@@ -9,11 +9,8 @@
         DateError.Text = ""
         DateError.Visible = False
     End Sub
-
-    Protected Sub CalculateCredit()
+    Protected Sub btnCalculate_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnCalculate.Click
 
     End Sub
-
-
 
 End Class

@@ -100,3 +100,9 @@
 .error-label{
     color:red;
 }
+
+.td-m {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
