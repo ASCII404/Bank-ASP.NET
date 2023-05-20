@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/credit_validator.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -29,14 +31,14 @@
             <div>
                 <div class="center">
                     <asp:Label runat="server" Text="Your full name" CssClass=""></asp:Label>
-                    <asp:TextBox ID="txtName" runat="server" CssClass="input-field"></asp:TextBox>
-                    <asp:Label ID="NameError" runat="server" Text="Name invalid!" CssClass="error-label" Visible="false"></asp:Label>
+                    <asp:TextBox ID="txtName" runat="server" OnTextChanged="Name_focus" CssClass="input-field"></asp:TextBox>
+                    <asp:Label ID="NameError" runat="server" Text="" CssClass="error-label" Visible="false"></asp:Label>
                 </div>
 
                 <div class="center">
                     <asp:Label runat="server" Text="Amount of money in $" CssClass=""></asp:Label>
-                    <asp:TextBox ID="txtAmount" runat="server" CssClass="input-field"></asp:TextBox>
-                    <asp:Label ID="AmountError" runat="server" Text="Amount invalid!" CssClass="error-label" Visible="false"></asp:Label>
+                    <asp:TextBox ID="txtAmount" runat="server" OnTextChanged="Amount_focus" CssClass="input-field"></asp:TextBox>
+                    <asp:Label ID="AmountError" runat="server" Text="" CssClass="error-label" Visible="false"></asp:Label>
                 </div>
             </div>
 
@@ -56,14 +58,18 @@
                 </div>
             </div>
 
-            <div class="incomes">
-                <asp:CheckBoxList ID="checkboxList" runat="server" CssClass="td-m">
-                  <asp:ListItem Text="Personal income" Value="1" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
-                  <asp:ListItem Text="Allowance & gifts" Value="2" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
-                  <asp:ListItem Text="Non-taxable income" Value="3" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
-                  <asp:ListItem Text="Scholarship" Value="4" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
-                </asp:CheckBoxList>
+            <div class="incomes-container">
+                <div class="incomes">
+                    <asp:CheckBoxList ID="checkboxList" runat="server" CssClass="td-m">
+                      <asp:ListItem Text="Personal income" Value="10" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                      <asp:ListItem Text="Allowance & gifts" Value="5" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                      <asp:ListItem Text="Non-taxable income" Value="20" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                      <asp:ListItem Text="Scholarship" Value="25" style="display: flex; flex-direction: row; align-items: flex-start;"></asp:ListItem>
+                    </asp:CheckBoxList>
+                </div>
+                <asp:Label ID="IncomeError" runat="server" CssClass="error-label" Text="You have to select at least one type of income!" Visible="false"></asp:Label>
             </div>
+
             <div class="center">
                 <asp:Label runat="server" Text="Start of the contract period" CssClass=""></asp:Label>
                 <asp:TextBox ID="startDate" runat="server" AutoPostBack="true" OnTextChanged="DatePicker_focus" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
@@ -91,6 +97,6 @@
         <p>Copyright &copy; 2023</p>
     </footer>
     <script src="/JS/LogIn_session.js"></script>
-
+    <script src="/JS/credit_validator.js"></script>
 </body>
 </html>

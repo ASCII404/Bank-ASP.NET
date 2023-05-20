@@ -234,6 +234,13 @@
       <DependentUpon>CounterpartsManagement.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Webforms\Info.aspx.designer.vb">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webforms\Info.aspx.vb">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Webforms\LogIn.aspx.designer.vb">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
@@ -292,6 +299,7 @@
     <Content Include="CSS\Account.css" />
     <Content Include="CSS\AccountStatement.css" />
     <Content Include="CSS\BankTransactions.css" />
+    <Content Include="CSS\Info.css" />
     <Content Include="HTML\about.html" />
     <Content Include="App_Data\BankDTB.mdf" />
     <Content Include="App_Data\BankDTB_log.ldf">
@@ -335,6 +343,7 @@
     <Content Include="Webforms\AccountStatement.aspx" />
     <Content Include="Webforms\BankingTransactions.aspx" />
     <Content Include="Webforms\CounterpartsManagement.aspx" />
+    <Content Include="Webforms\Info.aspx" />
     <Content Include="Webforms\LogIn.aspx" />
     <Content Include="CSS\LogIn.css" />
     <Content Include="Webforms\CreditSimulator.aspx" />

@@ -31,16 +31,9 @@
                         <h2>Account Options</h2>
                     </div>
                     <div class="card-body">
-                        <!-- Button to Banking Transactions Form -->
                         <asp:Button ID="btnTransactions" runat="server" Text="Banking Transactions" CssClass="form-button" OnClick="BankingTransactions" />
-
-                        <!-- Button to New Bank Transaction Form -->
                         <asp:Button ID="btnNewTransaction" runat="server" Text="New Bank Transaction" CssClass="form-button" OnClick="NewTransactions" />
-
-                        <!-- Button to Account Statement Form -->
                         <asp:Button ID="btnAccountStatement" runat="server" Text="Account Statement" CssClass="form-button" OnClick="AccountStatement" />
-
-                        <!-- Button to Counterparts Management Form -->
                         <asp:Button ID="btnCounterparts" runat="server" Text="Counterparts Management" CssClass="form-button" OnClick="CounterpartsManagement" />
                     </div>
                 </div>

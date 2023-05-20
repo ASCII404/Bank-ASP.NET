@@ -91,3 +91,10 @@ select#ddlOptions {
     max-height: 500px; /* Adjust the maximum height as needed */
     overflow-y: auto;
 }
+
+.search-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

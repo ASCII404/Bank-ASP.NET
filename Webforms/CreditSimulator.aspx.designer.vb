@@ -104,6 +104,15 @@ Partial Public Class WebForm1
     Protected WithEvents checkboxList As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
+    '''IncomeError control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents IncomeError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''startDate control.
     '''</summary>
     '''<remarks>

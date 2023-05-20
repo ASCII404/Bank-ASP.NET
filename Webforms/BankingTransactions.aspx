@@ -7,9 +7,7 @@
     <title>Banking</title>
     <link href="/CSS/main_page.css" rel="stylesheet" type="text/css" />
     <link href="/CSS/BankTransactions.css" rel="stylesheet" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/JS/page_functionality.js" defer></script>
-    <script src="/JS/credit_validator.js"></script>
 </head>
 <body>
     <header>
@@ -24,6 +22,7 @@
             <div id="user_div">GUEST</div>
         </nav>
     </header>
+
     <form id="form1" runat="server">
         <div class="container">
             <div class="filters-container">
@@ -49,7 +48,12 @@
                         <asp:TextBox ID="startDate" runat="server" AutoPostBack="true" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
                     </div>
                 </div>
-                <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="form-button" OnClick="btnSearch_Click" />
+                <div class="search-buttons">
+                    <asp:Button ID="btnSearch" runat="server" Text="Search Amount" CssClass="form-button" OnClick="btnSearchAmount_Click" AutoPostBack="True" UseSubmitBehavior="false"/>
+                    <asp:Button ID="btnSearch2" runat="server" Text="Search After Type" CssClass="form-button" OnClick="btnSearchType_Click" AutoPostBack="True" UseSubmitBehavior="false"/>
+                    <asp:Button ID="btnSearch3" runat="server" Text="Search After Date" CssClass="form-button" OnClick="btnSearchDate_Click" AutoPostBack="True" UseSubmitBehavior="false"/>
+                </div>
+
             </div>
             <div class="transaction-container">
                 <asp:GridView ID="gridViewTransactions" runat="server" CssClass="transaction-grid" AutoGenerateColumns="false">

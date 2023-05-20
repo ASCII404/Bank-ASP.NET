@@ -59,6 +59,24 @@ Partial Public Class BankingTransactions
     Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnSearch2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSearch2 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnSearch3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSearch3 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''gridViewTransactions control.
     '''</summary>
     '''<remarks>

@@ -6,18 +6,18 @@
     End Sub
 
     Protected Sub BankingTransactions()
-        Server.TransferRequest("/Webforms/BankingTransactions.aspx")
+        Response.Redirect("/Webforms/BankingTransactions.aspx")
     End Sub
 
     Protected Sub NewTransactions()
-        Server.TransferRequest("/Webforms/New_BankTransactions.aspx")
+        Response.Redirect("/Webforms/New_BankTransactions.aspx")
     End Sub
 
     Protected Sub AccountStatement()
-        Server.TransferRequest("/Webforms/AccountStatement.aspx")
+        Response.Redirect("/Webforms/AccountStatement.aspx")
     End Sub
 
     Protected Sub CounterpartsManagement()
-        Server.TransferRequest("/Webforms/CounterpartsManagement.aspx")
+        Response.Redirect("/Webforms/CounterpartsManagement.aspx")
     End Sub
 End Class
