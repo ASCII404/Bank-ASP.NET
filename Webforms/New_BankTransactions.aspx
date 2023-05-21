@@ -61,7 +61,7 @@
                 <a href="https://github.com/ASCII404">Made by ASCII404</a>
             </strong>
         </p>
-        <p>Copyright &copy; 2023</p>
+        <p>Copyright &copy; 2023 Bank of ASE</p>
     </footer>
     <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/LogIn_session.js"></script>

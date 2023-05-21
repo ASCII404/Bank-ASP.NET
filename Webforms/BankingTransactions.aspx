@@ -36,7 +36,7 @@
                         <asp:Label runat="server" Text="Type of Transaction" CssClass="lbl-mod"></asp:Label>
                         <asp:DropDownList ID="ddlOptions" runat="server" CssClass="dropdown">
                             <asp:ListItem Text="Cash deposit - RON" Value="1"></asp:ListItem>
-                            <asp:ListItem Text="Cash deposit - EUR/USD" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="Cash deposit - Euro/USD" Value="2"></asp:ListItem>
                             <asp:ListItem Text="Cash withdrawal (counter) - RON" Value="3"></asp:ListItem>
                             <asp:ListItem Text="Cash withdrawal (ATM)- RON" Value="4"></asp:ListItem>
                             <asp:ListItem Text="Account Opening" Value="5"></asp:ListItem>

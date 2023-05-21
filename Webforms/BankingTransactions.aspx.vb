@@ -59,7 +59,6 @@ Public Class BankingTransactions
         Return 0
     End Function
 
-    '//WORK ON THESE 2 BUTTONS
     Protected Sub btnSearchAmount_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
         Dim userId As Integer = GetUserIdFromCookie()
@@ -127,10 +126,8 @@ Public Class BankingTransactions
             command.Parameters.AddWithValue("@AccountId", accountId)
             command.Parameters.AddWithValue("@AccountType", accountType)
 
-            ' Create a SqlDataAdapter to fill the DataTable
             Dim dataAdapter As New SqlDataAdapter(command)
 
-            ' Create a DataTable to hold the data
             Dim dataTable As New DataTable()
 
             ' Fill the DataTable with the data from the SqlDataAdapter
@@ -138,11 +135,8 @@ Public Class BankingTransactions
 
             ' Set the DataSource and DataMember properties of the GridView to display the data
             gridViewTransactions.DataSource = dataTable
-
-            ' Bind the data to the GridView
             gridViewTransactions.DataBind()
 
-            ' Close the database connection
             connection.Close()
         End Using
     End Sub
@@ -171,21 +165,30 @@ Public Class BankingTransactions
                 End If
             End Using
 
-            ' Create the SqlCommand object to execute the SQL query for AccountTransactions
-            Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId AND Amount = @Amount", connection)
-            command.Parameters.AddWithValue("@AccountId", accountId)
-            command.Parameters.AddWithValue("@Amount", Decimal.Parse(TransAmount.Text))
+            Dim transactionDate As DateTime
+            If DateTime.TryParse(startDate.Text, transactionDate) Then
+                ' Create the SqlCommand object to execute the SQL query for AccountTransactions
+                Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId AND CONVERT(datetime, TransactionDate, 120) = @TransactionDate", connection)
+                command.Parameters.AddWithValue("@AccountId", accountId)
+                command.Parameters.AddWithValue("@TransactionDate", transactionDate)
 
-            ' Execute the SQL query and get the results into a SqlDataReader
-            Dim reader As SqlDataReader = command.ExecuteReader()
+                ' Execute the SQL query and get the results into a SqlDataReader
+                Dim reader As SqlDataReader = command.ExecuteReader()
 
-            ' Bind the SqlDataReader to the GridView
-            gridViewTransactions.DataSource = reader
-            gridViewTransactions.DataBind()
+                ' Bind the SqlDataReader to the GridView
+                gridViewTransactions.DataSource = reader
+                gridViewTransactions.DataBind()
 
-            ' Close the SqlDataReader
-            reader.Close()
+                ' Close the SqlDataReader
+                reader.Close()
+            Else
+                ' Handle the case when the entered date is not in a valid format
+                ' Display an error message or take appropriate action
+            End If
         End Using
     End Sub
+
+
+
 
 End Class
