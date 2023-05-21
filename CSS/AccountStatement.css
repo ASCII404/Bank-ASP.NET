@@ -78,15 +78,15 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-    .dropdownlist option {
-        padding: 8px;
-    }
+.dropdownlist option {
+    padding: 8px;
+}
 
-        .dropdownlist option:hover {
-            background-color: #f2f2f2;
-        }
+.dropdownlist option:hover {
+    background-color: #f2f2f2;
+}
 
-        .dropdownlist option:selected {
-            font-weight: bold;
-        }
+.dropdownlist option:selected {
+    font-weight: bold;
+}
 

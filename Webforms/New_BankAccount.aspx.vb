@@ -11,7 +11,9 @@ Public Class New_BankAccount
         Dim accountType As String = ddlOptions.SelectedValue
         Dim ownerId As Integer = GetUserIdFromCookie()
         Dim todayDate As DateTime = DateTime.Today
-        Dim interestRate As Decimal = 78.3
+        Dim Random As New Random()
+        Dim interestRate As Decimal = CDec(Random.NextDouble() * (100 - 5) + 5)
+
         Dim randomDigits As Integer = New Random().Next(1000, 9999)
         Dim iban As String = "RO62 BNKX 0062 0023 2323 " & randomDigits.ToString()
 
