@@ -26,7 +26,7 @@
     <form id="AccountStatement" runat="server">
         <div class="container">
             <div class="label-container">
-                <div class="lbl-g">
+                <div>
                     <asp:Label ID="lblAccountType" runat="server" Text="Select Type of Account" CssClass="lbl-c"></asp:Label>
                 </div>
                 <asp:DropDownList ID="ddlAccountTypes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAccountTypes_SelectedIndexChanged">

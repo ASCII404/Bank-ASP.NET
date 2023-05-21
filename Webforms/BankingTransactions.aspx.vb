@@ -16,13 +16,11 @@ Public Class BankingTransactions
         Dim userId As Integer = GetUserIdFromCookie()
 
         Using connection As New SqlConnection(connectionString)
-            ' Create a SqlCommand object to execute the SQL query to get the AccountId
             Dim getAccID As New SqlCommand("SELECT AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
             getAccID.Parameters.AddWithValue("@OwnerId", userId)
 
             connection.Open()
 
-            ' Execute the first query to retrieve the account ID
             Using getAccIDReader As SqlDataReader = getAccID.ExecuteReader()
                 If getAccIDReader.Read() Then
                     accountId = CInt(getAccIDReader("AccountId"))
@@ -31,7 +29,6 @@ Public Class BankingTransactions
                 End If
             End Using
 
-            ' Create the SqlCommand object to execute the SQL query for AccountTransactions
             Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId", connection)
             command.Parameters.AddWithValue("@AccountId", accountId)
 
@@ -65,7 +62,6 @@ Public Class BankingTransactions
 
         Using connection As New SqlConnection(connectionString)
             Dim accountId As Integer
-            ' Create a SqlCommand object to execute the SQL query to get the AccountId
             Dim getAccID As New SqlCommand("SELECT AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
             getAccID.Parameters.AddWithValue("@OwnerId", userId)
 
@@ -80,12 +76,10 @@ Public Class BankingTransactions
                 End If
             End Using
 
-            ' Create the SqlCommand object to execute the SQL query for AccountTransactions
             Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId AND Amount = @Amount", connection)
             command.Parameters.AddWithValue("@AccountId", accountId)
             command.Parameters.AddWithValue("@Amount", Decimal.Parse(TransAmount.Text))
 
-            ' Execute the SQL query and get the results into a SqlDataReader
             Dim reader As SqlDataReader = command.ExecuteReader()
 
             ' Bind the SqlDataReader to the GridView
@@ -102,7 +96,6 @@ Public Class BankingTransactions
 
         Using connection As New SqlConnection(connectionString)
             Dim accountId As Integer
-            ' Create a SqlCommand object to execute the SQL query to get the AccountId
             Dim getAccID As New SqlCommand("SELECT AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
             getAccID.Parameters.AddWithValue("@OwnerId", userId)
 
@@ -121,7 +114,6 @@ Public Class BankingTransactions
             ' Convert the selected value of ddlOptions to string
             Dim accountType As String = ddlOptions.SelectedItem.Text.Trim()
 
-            ' Create the SqlCommand object to execute the SQL query for AccountTransactions
             Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId AND TransactionType = @AccountType", connection)
             command.Parameters.AddWithValue("@AccountId", accountId)
             command.Parameters.AddWithValue("@AccountType", accountType)
@@ -150,7 +142,6 @@ Public Class BankingTransactions
 
         Using connection As New SqlConnection(connectionString)
             Dim accountId As Integer
-            ' Create a SqlCommand object to execute the SQL query to get the AccountId
             Dim getAccID As New SqlCommand("SELECT AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
             getAccID.Parameters.AddWithValue("@OwnerId", userId)
 
@@ -167,12 +158,10 @@ Public Class BankingTransactions
 
             Dim transactionDate As DateTime
             If DateTime.TryParse(startDate.Text, transactionDate) Then
-                ' Create the SqlCommand object to execute the SQL query for AccountTransactions
                 Dim command As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId AND CONVERT(datetime, TransactionDate, 120) = @TransactionDate", connection)
                 command.Parameters.AddWithValue("@AccountId", accountId)
                 command.Parameters.AddWithValue("@TransactionDate", transactionDate)
 
-                ' Execute the SQL query and get the results into a SqlDataReader
                 Dim reader As SqlDataReader = command.ExecuteReader()
 
                 ' Bind the SqlDataReader to the GridView

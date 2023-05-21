@@ -10,10 +10,7 @@ Public Class New_BankTransactions
     Protected Sub btnTransaction_Click(sender As Object, e As EventArgs)
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
 
-        ' SQL query to retrieve the account ID based on the user
         Dim accountQuery As String = "SELECT AccountId FROM BankAccounts WHERE OwnerId = @UserId"
-
-        ' SQL query to insert transaction information
         Dim transactionQuery As String = "INSERT INTO AccountTransactions (AccountId, TransactionType, TransactionDate, Amount, Explanation) VALUES (@AccountId, @TransactionType, @TransactionDate, @Amount, @Explanation)"
 
         Dim userId As Integer = GetUserIdFromCookie()
@@ -47,9 +44,9 @@ Public Class New_BankTransactions
 
                     Try
                         command.ExecuteNonQuery()
-                        MsgBox("Success!")
+                        MsgBox("Success! Your money went righ where you sent them!")
                     Catch ex As Exception
-                        MsgBox(ex.Message)
+                        MsgBox("Sorry we encountered some problems with the transaction.")
                     End Try
                 End Using
             Else

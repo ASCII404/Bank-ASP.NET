@@ -16,7 +16,6 @@ Public Class LogIn
         Using connection As New SqlConnection(connectionString)
             Try
                 connection.Open()
-                ' Create a SQL command to retrieve the user with the entered username
                 Dim command As New SqlCommand("SELECT * FROM Users WHERE UserName=@UserName", connection)
                 command.Parameters.AddWithValue("@UserName", username)
 

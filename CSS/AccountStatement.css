@@ -65,3 +65,28 @@
     background-color: #333;
     color: #fff;
 }
+
+.dropdownlist {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+    .dropdownlist option {
+        padding: 8px;
+    }
+
+        .dropdownlist option:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdownlist option:selected {
+            font-weight: bold;
+        }
+

@@ -33,9 +33,9 @@ Public Class New_BankAccount
 
                 Try
                     command.ExecuteNonQuery()
-                    MsgBox("Success!")
+                    MsgBox("Success! Your new account is ready to use.")
                 Catch ex As Exception
-                    MsgBox(ex.Message)
+                    MsgBox("Sorry, we've encountered an error when trying to make you a new bank account")
                 End Try
             End Using
         End Using

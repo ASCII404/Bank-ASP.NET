@@ -4,6 +4,7 @@ Public Class AccountStatement
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ddlAccountTypes.CssClass = "dropdownlist"
         If IsPostBack Then
             RetrieveDataFromDatabase()
         End If
@@ -14,16 +15,9 @@ Public Class AccountStatement
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
         Dim accountType As String = ddlAccountTypes.SelectedValue ' Get the selected account type from the dropdown list
 
-        ' SQL query to retrieve the account ID based on the account type and owner ID
         Dim accountIdQuery As String = "SELECT AccountId, AccountIBAN FROM BankAccounts WHERE AccountType = @AccountType AND OwnerId = @OwnerId"
-
-        ' SQL query to retrieve the account owner's first name and last name from the "Users" table
         Dim accountOwnerQuery As String = "SELECT FirstName, LastName FROM AccountOwners WHERE UserId = @OwnerId"
-
-        ' SQL query to retrieve the email from the "Users" table
         Dim emailQuery As String = "SELECT Email FROM Users WHERE UserId = @OwnerId"
-
-        ' SQL query to retrieve the opening date and interest rate from the "BankAccounts" table
         Dim accountInfoQuery As String = "SELECT OpeningDate, InterestRate FROM BankAccounts WHERE AccountId = @AccountId"
 
         Try
