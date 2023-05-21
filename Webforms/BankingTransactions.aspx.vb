@@ -4,7 +4,7 @@ Imports System.Globalization
 Public Class BankingTransactions
     Inherits System.Web.UI.Page
 
-    Dim accountId As Integer ' Assuming AccountId is of type Integer
+    Dim accountId As Integer
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             RetrieveDataFromDatabase()
@@ -13,25 +13,21 @@ Public Class BankingTransactions
 
     Protected Sub RetrieveDataFromDatabase()
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
-
-        ' Get the user ID from the cookie
         Dim userId As Integer = GetUserIdFromCookie()
 
-        ' Create a SqlConnection object
         Using connection As New SqlConnection(connectionString)
             ' Create a SqlCommand object to execute the SQL query to get the AccountId
             Dim getAccID As New SqlCommand("SELECT AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
             getAccID.Parameters.AddWithValue("@OwnerId", userId)
 
             connection.Open()
-            ' Execute the first query to retrieve the account ID
 
+            ' Execute the first query to retrieve the account ID
             Using getAccIDReader As SqlDataReader = getAccID.ExecuteReader()
                 If getAccIDReader.Read() Then
                     accountId = CInt(getAccIDReader("AccountId"))
                 Else
-                    ' Handle the case when no account ID is found for the given owner ID
-                    ' You can raise an exception, display an error message, or handle it in a way that fits your application's logic
+                    ' Handle the case when no account ID is found for the given owner ID no more time
                 End If
             End Using
 
@@ -40,19 +36,15 @@ Public Class BankingTransactions
             command.Parameters.AddWithValue("@AccountId", accountId)
 
             connection.Close()
+
             ' Execute the second query and process the results as needed
-
-
-            ' Open the database connection
             connection.Open()
 
-            ' Execute the SQL query and get the results into a SqlDataReader
             Dim reader As SqlDataReader = command.ExecuteReader()
             ' Bind the SqlDataReader to the GridView
             gridViewTransactions.DataSource = reader
             gridViewTransactions.DataBind()
 
-            ' Close the SqlDataReader and the database connection
             reader.Close()
             connection.Close()
         End Using

@@ -10,8 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/credit_validator.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -31,13 +30,13 @@
             <div>
                 <div class="center">
                     <asp:Label runat="server" Text="Your full name" CssClass=""></asp:Label>
-                    <asp:TextBox ID="txtName" runat="server" OnTextChanged="Name_focus" CssClass="input-field"></asp:TextBox>
+                    <asp:TextBox ID="txtName" runat="server" CssClass="input-field"></asp:TextBox>
                     <asp:Label ID="NameError" runat="server" Text="" CssClass="error-label" Visible="false"></asp:Label>
                 </div>
 
                 <div class="center">
                     <asp:Label runat="server" Text="Amount of money in $" CssClass=""></asp:Label>
-                    <asp:TextBox ID="txtAmount" runat="server" OnTextChanged="Amount_focus" CssClass="input-field"></asp:TextBox>
+                    <asp:TextBox ID="txtAmount" runat="server" CssClass="input-field"></asp:TextBox>
                     <asp:Label ID="AmountError" runat="server" Text="" CssClass="error-label" Visible="false"></asp:Label>
                 </div>
             </div>
@@ -72,13 +71,13 @@
 
             <div class="center">
                 <asp:Label runat="server" Text="Start of the contract period" CssClass=""></asp:Label>
-                <asp:TextBox ID="startDate" runat="server" AutoPostBack="true" OnTextChanged="DatePicker_focus" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
+                <asp:TextBox ID="startDate" runat="server" AutoPostBack="true" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
             </div>
 
 
             <div class="center">
                 <asp:Label runat="server" Text="End of the contract period" CssClass=""></asp:Label>
-                <asp:TextBox ID="endDate" runat="server" AutoPostBack="true" OnTextChanged="DatePicker_focus" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
+                <asp:TextBox ID="endDate" runat="server" AutoPostBack="true" CssClass="input-field" TextMode="DateTimeLocal"></asp:TextBox>
             </div>
 
             <div class="error-container">
@@ -94,6 +93,12 @@
     </form>
 
     <footer>
+        <p>
+            <i class="fab fa-github"></i>
+            <strong>
+                <a href="https://github.com/ASCII404">Made by ASCII404</a>
+            </strong>
+        </p>
         <p>Copyright &copy; 2023</p>
     </footer>
     <script src="/JS/LogIn_session.js"></script>

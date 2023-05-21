@@ -300,6 +300,7 @@
     <Content Include="CSS\AccountStatement.css" />
     <Content Include="CSS\BankTransactions.css" />
     <Content Include="CSS\Info.css" />
+    <Content Include="CSS\New_BankTransactions.css" />
     <Content Include="HTML\about.html" />
     <Content Include="App_Data\BankDTB.mdf" />
     <Content Include="App_Data\BankDTB_log.ldf">
@@ -338,7 +339,6 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="CSS\CreditSimulator.css" />
-    <Content Include="JS\credit_validator.js" />
     <Content Include="Webforms\Account.aspx" />
     <Content Include="Webforms\AccountStatement.aspx" />
     <Content Include="Webforms\BankingTransactions.aspx" />

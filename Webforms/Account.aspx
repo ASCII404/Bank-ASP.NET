@@ -8,7 +8,7 @@
     <link href="/CSS/Account.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/JS/page_functionality.js" defer></script>
-    <script src="/JS/credit_validator.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -41,7 +41,13 @@
         </div>
     </form>
     <footer>
-        <p>&copy; 2023 Bank. All rights reserved.</p>
+        <p>
+            <i class="fab fa-github"></i>
+            <strong>
+                <a href="https://github.com/ASCII404">Made by ASCII404</a>
+            </strong>
+        </p>
+        <p>Copyright &copy; 2023</p>
     </footer>
     <script src="/JS/page_functionality.js" defer></script>
     <script src="/JS/LogIn_session.js"></script>

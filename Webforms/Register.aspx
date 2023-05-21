@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Registration Page</title>
     <link href="/CSS/Register.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <form runat="server">
@@ -14,6 +15,14 @@
             <div class="textbox">
                 <i class="fas fa-user"></i>
                 <asp:TextBox ID="UsernameTextBox" runat="server" placeholder="Username"></asp:TextBox>
+            </div>
+            <div class="textbox">
+                <i class="fas fa-user"></i>
+                <asp:TextBox ID="LastName" runat="server" placeholder="Last name"></asp:TextBox>
+            </div>
+            <div class="textbox">
+                <i class="fas fa-user"></i>
+                <asp:TextBox ID="FirstName" runat="server" placeholder="First Name"></asp:TextBox>
             </div>
             <div class="textbox">
                 <i class="fas fa-envelope"></i>

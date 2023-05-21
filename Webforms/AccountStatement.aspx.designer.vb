@@ -59,6 +59,24 @@ Partial Public Class AccountStatement
     Protected WithEvents lblAccountType As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lblOpeningDate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblOpeningDate As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblInterestRate control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblInterestRate As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblTransactions control.
     '''</summary>
     '''<remarks>

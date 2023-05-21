@@ -17,15 +17,13 @@ function getCookieValue(cookieName, valueName) {
     }
     return "";
 }
-
-console.log(getCookieValue("UserInfo", "Username"));
 // Check login status and retrieve username and user ID
 function checkLoginStatus() {
     var username = getCookieValue("UserInfo", "Username");
     var userId = getCookieValue("UserInfo", "UserID");
 
     if (username && userId) {
-        document.getElementById("user_div").textContent = "Hello, " + username + " (ID: " + userId + ")!";
+        document.getElementById("user_div").textContent = "Hello, " + username + "!";
     } else {
         window.location.href = "/Webforms/LogIn.aspx";
     }

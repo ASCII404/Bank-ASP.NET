@@ -7,20 +7,6 @@ Public Class WebForm1
 
     End Sub
 
-    Protected Sub DatePicker_focus(sender As Object, e As EventArgs)
-        DateError.Text = ""
-        DateError.Visible = False
-    End Sub
-
-    Protected Sub Amount_focus(sender As Object, e As EventArgs)
-        AmountError.Text = ""
-        AmountError.Visible = False
-    End Sub
-
-    Protected Sub Name_focus(sender As Object, e As EventArgs)
-        NameError.Visible = False
-    End Sub
-
     Function validate_Startdate(startDate As String) As Integer
         Dim startDateTime As DateTime
         If Not String.IsNullOrWhiteSpace(startDate) Then
@@ -84,7 +70,14 @@ Public Class WebForm1
         Else
             AmountError.Visible = False
             AmountError.Text = ""
-            amount = Integer.Parse(txtAmount.Text)
+            If Integer.TryParse(txtAmount.Text, amount) Then
+                amount = Integer.Parse(txtAmount.Text)
+            Else
+                AmountError.Visible = True
+                AmountError.Text = "Invalid amount! Please enter a valid number"
+                flag = False
+            End If
+
         End If
 
         Select Case True

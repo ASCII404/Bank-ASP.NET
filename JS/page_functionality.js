@@ -1,7 +1,5 @@
-﻿// Get the current page URL
+﻿
 var currentPage = window.location.href;
-
-// Get all navigation links
 var navLinks = document.querySelectorAll('.nav-link');
 
 // Loop through the navigation links and check if their href matches the current page URL
