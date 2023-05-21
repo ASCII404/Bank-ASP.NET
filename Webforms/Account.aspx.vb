@@ -20,4 +20,7 @@
     Protected Sub CounterpartsManagement()
         Response.Redirect("/Webforms/CounterpartsManagement.aspx")
     End Sub
+    Protected Sub NewBankAccount()
+        Response.Redirect("/Webforms/New_BankAccount.aspx")
+    End Sub
 End Class

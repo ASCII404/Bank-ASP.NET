@@ -27,6 +27,18 @@
         <div class="container">
             <div class="label-container">
                 <div class="lbl-g">
+                    <asp:Label ID="lblAccountType" runat="server" Text="Select Type of Account" CssClass="lbl-c"></asp:Label>
+                </div>
+                <asp:DropDownList ID="ddlAccountTypes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlAccountTypes_SelectedIndexChanged">
+                    <asp:ListItem Text="Pension account" Value="Pension account"></asp:ListItem>
+                    <asp:ListItem Text="Regular deposit Euro" Value="Regular deposit Euro"></asp:ListItem>
+                    <asp:ListItem Text="Regular deposit RON" Value="Regular deposit RON"></asp:ListItem>
+                    <asp:ListItem Text="Regulat deposit USD" Value="Regulat deposit USD"></asp:ListItem>
+                    <asp:ListItem Text="Salary account" Value="Salary account"></asp:ListItem>
+                    <asp:ListItem Text="Student deposit" Value="Student deposit"></asp:ListItem>
+                </asp:DropDownList>
+
+                <div class="lbl-g">
                     <asp:Label ID="lblIban" runat="server" Text="IBAN:" CssClass="lbl-c"></asp:Label>
                 </div>
                 <div class="lbl-g">
@@ -36,11 +48,6 @@
                 <div class="lbl-g">
                     <asp:Label ID="lblEmail" runat="server" Text="Email associated:" CssClass="lbl-c"></asp:Label>
                 </div>
-
-                <div class="lbl-g">
-                    <asp:Label ID="lblAccountType" runat="server" Text="Type of account:" CssClass="lbl-c"></asp:Label>
-                </div>
-
                 <div class="lbl-g">
                     <asp:Label ID="lblOpeningDate" runat="server" Text="Opening Date:" CssClass="lbl-c"></asp:Label>
                 </div>

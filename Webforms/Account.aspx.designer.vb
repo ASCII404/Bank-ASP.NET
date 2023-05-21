@@ -32,6 +32,15 @@ Partial Public Class Account
     Protected WithEvents btnTransactions As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnNewAcc control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnNewAcc As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btnNewTransaction control.
     '''</summary>
     '''<remarks>

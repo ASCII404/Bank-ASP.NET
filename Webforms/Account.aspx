@@ -32,6 +32,7 @@
                     </div>
                     <div class="card-body">
                         <asp:Button ID="btnTransactions" runat="server" Text="Banking Transactions" CssClass="form-button" OnClick="BankingTransactions" />
+                        <asp:Button ID="btnNewAcc" runat="server" Text="New Bank Account" CssClass="form-button" OnClick="NewBankAccount" />
                         <asp:Button ID="btnNewTransaction" runat="server" Text="New Bank Transaction" CssClass="form-button" OnClick="NewTransactions" />
                         <asp:Button ID="btnAccountStatement" runat="server" Text="Account Statement" CssClass="form-button" OnClick="AccountStatement" />
                         <asp:Button ID="btnCounterparts" runat="server" Text="Counterparts Management" CssClass="form-button" OnClick="CounterpartsManagement" />

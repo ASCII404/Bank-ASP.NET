@@ -23,6 +23,24 @@ Partial Public Class AccountStatement
     Protected WithEvents AccountStatement As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''lblAccountType control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAccountType As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ddlAccountTypes control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlAccountTypes As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''lblIban control.
     '''</summary>
     '''<remarks>
@@ -48,15 +66,6 @@ Partial Public Class AccountStatement
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblAccountType control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblAccountType As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblOpeningDate control.

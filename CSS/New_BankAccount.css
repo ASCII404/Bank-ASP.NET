@@ -1,0 +1,81 @@
+﻿.form-card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 600px; /* Increase the max-width value */
+    width: 80%; /* Add a width value to make the card responsive */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+h1 {
+    text-align: center;
+}
+
+.lbl-mod {
+    margin-bottom: 10px;
+}
+
+    .lbl-mod span {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #888888;
+}
+
+.options {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+
+    .options input[type="text"],
+    .options select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
+
+        .options input[type="text"]:focus,
+        .options select:focus {
+            border-color: #1e1e1e;
+        }
+
+.btn-create {
+    text-align: center;
+}
+
+    .btn-create input[type="submit"] {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #333333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-create input[type="submit"]:hover {
+            background-color: #1e1e1e;
+        }

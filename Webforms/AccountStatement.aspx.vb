@@ -4,165 +4,134 @@ Public Class AccountStatement
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Not IsPostBack Then
+        If IsPostBack Then
             RetrieveDataFromDatabase()
         End If
     End Sub
 
     Protected Sub RetrieveDataFromDatabase()
+        Dim ownerId As Integer = GetUserIdFromCookie() ' Retrieve the ownerId from the cookie or any other source
         Dim connectionString As String = "Server=localhost;Database=ASP.NET-BANK;Trusted_Connection=True;"
+        Dim accountType As String = ddlAccountTypes.SelectedValue ' Get the selected account type from the dropdown list
 
-        Dim userId As Integer = GetUserIdFromCookie()
-        Dim account_id As Integer
+        ' SQL query to retrieve the account ID based on the account type and owner ID
+        Dim accountIdQuery As String = "SELECT AccountId, AccountIBAN FROM BankAccounts WHERE AccountType = @AccountType AND OwnerId = @OwnerId"
 
-        Using connection As New SqlConnection(connectionString)
-            connection.Open()
+        ' SQL query to retrieve the account owner's first name and last name from the "Users" table
+        Dim accountOwnerQuery As String = "SELECT FirstName, LastName FROM AccountOwners WHERE UserId = @OwnerId"
 
-            Dim ibanCommand As New SqlCommand("SELECT AccountIban, AccountId FROM dbo.BankAccounts WHERE OwnerId = @OwnerId", connection)
-            ibanCommand.Parameters.AddWithValue("@OwnerId", userId)
-            Dim iban_reader As SqlDataReader = ibanCommand.ExecuteReader()
-            ' Check if there are rows returned
-            If iban_reader.HasRows Then
-                iban_reader.Read()
+        ' SQL query to retrieve the email from the "Users" table
+        Dim emailQuery As String = "SELECT Email FROM Users WHERE UserId = @OwnerId"
 
-                Dim iban_value As Object = iban_reader("AccountIBAN").ToString()
-                account_id = iban_reader("AccountId")
+        ' SQL query to retrieve the opening date and interest rate from the "BankAccounts" table
+        Dim accountInfoQuery As String = "SELECT OpeningDate, InterestRate FROM BankAccounts WHERE AccountId = @AccountId"
 
-                ' Check if the value is not null
-                If iban_value IsNot Nothing Then
-                    lblIban.Text = "IBAN:" + " " + iban_value
-                Else
-                    lblIban.Text = "No IBAN found for this account!"
-                End If
-            Else
-                lblIban.Text = "No IBAN found for this account!"
-            End If
+        Try
+            Using connection As New SqlConnection(connectionString)
+                connection.Open()
 
-            iban_reader.Close()
+                ' Retrieve the account ID and IBAN based on the account type and owner ID
+                Using accountIdCommand As New SqlCommand(accountIdQuery, connection)
+                    accountIdCommand.Parameters.AddWithValue("@AccountType", accountType)
+                    accountIdCommand.Parameters.AddWithValue("@OwnerId", ownerId)
 
-            Dim acctypeCommand As New SqlCommand("SELECT AccountType FROM dbo.BankAccounts WHERE OwnerId = @AccountId", connection)
-            acctypeCommand.Parameters.AddWithValue("@AccountId", userId)
-            Dim acctypeReader As SqlDataReader = acctypeCommand.ExecuteReader()
+                    Dim reader As SqlDataReader = accountIdCommand.ExecuteReader()
 
-            If acctypeReader.HasRows Then
-                acctypeReader.Read()
+                    If reader.HasRows Then
+                        reader.Read()
 
-                Dim columnValue As Object = acctypeReader(0)
+                        Dim accountId As Integer = CInt(reader("AccountId"))
+                        Dim accountIban As String = reader("AccountIBAN").ToString()
 
-                If columnValue IsNot Nothing Then
+                        lblIban.Text = "IBAN: " + accountIban
+                        reader.Close()
 
-                    lblAccountType.Text = "Account type:" + " " + columnValue.ToString()
-                Else
-                    lblAccountType.Text = "No Account type found for this account!"
-                End If
-            Else
-                lblAccountType.Text = "No Account type found for this account!"
-            End If
+                        ' Retrieve the account owner's first name and last name from the "Users" table
+                        Using accountOwnerCommand As New SqlCommand(accountOwnerQuery, connection)
+                            accountOwnerCommand.Parameters.AddWithValue("@OwnerId", ownerId)
 
-            acctypeReader.Close()
+                            Dim accountOwnerReader As SqlDataReader = accountOwnerCommand.ExecuteReader()
 
-            ' Retrieve the email
-            Dim emailCommand As New SqlCommand("SELECT email FROM dbo.Users WHERE UserId = @UserId", connection)
-            emailCommand.Parameters.AddWithValue("@UserId", userId)
-            Dim email_reader As SqlDataReader = emailCommand.ExecuteReader()
+                            If accountOwnerReader.HasRows Then
+                                accountOwnerReader.Read()
 
-            If email_reader.HasRows Then
-                email_reader.Read()
+                                Dim firstName As String = accountOwnerReader("FirstName").ToString()
+                                Dim lastName As String = accountOwnerReader("LastName").ToString()
 
-                Dim columnValue As Object = email_reader(0)
+                                lblAccountOwner.Text = "Who owns the account: " + firstName + " " + lastName
+                            End If
 
-                ' Check if the value is not null
-                If columnValue IsNot Nothing Then
-                    ' Print the value
-                    lblEmail.Text = "Email associated:" + " " + columnValue.ToString()
-                Else
-                    lblEmail.Text = "Email associated not found!"
-                End If
-            Else
-                lblEmail.Text = "Email associated:"
-            End If
+                            accountOwnerReader.Close()
+                        End Using
 
-            email_reader.Close()
+                        ' Retrieve the email from the "Users" table
+                        Using emailCommand As New SqlCommand(emailQuery, connection)
+                            emailCommand.Parameters.AddWithValue("@OwnerId", ownerId)
 
-            ' Retrieve the account owner
-            Dim accountOwnerCommand As New SqlCommand("SELECT LastName, FirstName FROM AccountOwners WHERE UserId = @UserId", connection)
-            accountOwnerCommand.Parameters.AddWithValue("@UserId", userId)
-            Dim accountOwnerReader As SqlDataReader = accountOwnerCommand.ExecuteReader()
+                            Dim emailReader As SqlDataReader = emailCommand.ExecuteReader()
 
-            If accountOwnerReader.HasRows Then
-                accountOwnerReader.Read()
+                            If emailReader.HasRows Then
+                                emailReader.Read()
 
-                Dim lastName As String = accountOwnerReader("LastName").ToString()
-                Dim firstName As String = accountOwnerReader("FirstName").ToString()
+                                Dim email As String = emailReader("Email").ToString()
 
-                ' Check if the values are not null
-                If Not String.IsNullOrEmpty(lastName) AndAlso Not String.IsNullOrEmpty(firstName) Then
-                    lblAccountOwner.Text = "Account owner: " & firstName & " " & lastName
-                Else
-                    lblAccountOwner.Text = "No name registered found for this account!"
-                End If
-            Else
-                lblAccountOwner.Text = "No name registered found for this account!"
-            End If
+                                lblEmail.Text = "Email associated: " + email
+                            End If
 
-            accountOwnerReader.Close()
+                            emailReader.Close()
+                        End Using
 
-            'Get the Opening Date from the account
-            Dim getDate As New SqlCommand("SELECT OpeningDate FROM dbo.BankAccounts WHERE AccountId = @AccountId", connection)
-            getDate.Parameters.AddWithValue("@AccountId", account_id)
-            Dim DateReader As SqlDataReader = getDate.ExecuteReader()
+                        ' Retrieve the opening date and interest rate from the "BankAccounts" table
+                        Using accountInfoCommand As New SqlCommand(accountInfoQuery, connection)
+                            accountInfoCommand.Parameters.AddWithValue("@AccountId", accountId)
 
-            If DateReader.HasRows Then
-                DateReader.Read()
+                            Dim accountInfoReader As SqlDataReader = accountInfoCommand.ExecuteReader()
 
-                Dim columnValue As Object = DateReader(0)
+                            If accountInfoReader.HasRows Then
+                                accountInfoReader.Read()
 
-                ' Check if the value is not null
-                If columnValue IsNot Nothing Then
-                    lblOpeningDate.Text = "Opening Date:" + " " + columnValue.ToString()
-                Else
-                    lblOpeningDate.Text = "Opening Date not found!"
-                End If
-            Else
-                lblOpeningDate.Text = "Opening Date:"
-            End If
-            DateReader.Close()
+                                Dim openingDate As DateTime = CDate(accountInfoReader("OpeningDate"))
+                                Dim interestRate As Decimal = CDec(accountInfoReader("InterestRate"))
 
-            'Get the interest rate of the account
-            Dim getRate As New SqlCommand("SELECT InterestRate FROM dbo.BankAccounts WHERE AccountId = @AccountId", connection)
-            getRate.Parameters.AddWithValue("@AccountId", account_id)
-            Dim RateReader As SqlDataReader = getRate.ExecuteReader()
+                                lblOpeningDate.Text = "Opening Date: " + openingDate.ToString("yyyy-MM-dd")
+                                lblInterestRate.Text = "Interest rate on this account: " + interestRate.ToString("0.00") + "%"
+                            End If
 
-            If RateReader.HasRows Then
-                RateReader.Read()
+                            accountInfoReader.Close()
+                        End Using
 
-                Dim columnValue As Object = RateReader(0)
+                        ' SQL query to retrieve the transactions for the specific account ID
+                        Dim transactionsQuery As String = "SELECT * FROM AccountTransactions WHERE AccountId = @AccountId"
 
-                ' Check if the value is not null
-                If columnValue IsNot Nothing Then
-                    lblInterestRate.Text = "Interest rate:" + " " + columnValue.ToString()
-                Else
-                    lblInterestRate.Text = "Interest rate not found!"
-                End If
-            Else
-                lblInterestRate.Text = "Interest rate:"
-            End If
-            RateReader.Close()
+                        Using transactionsCommand As New SqlCommand(transactionsQuery, connection)
+                            transactionsCommand.Parameters.AddWithValue("@AccountId", accountId)
 
-            Dim gridcommand As New SqlCommand("SELECT * FROM dbo.AccountTransactions WHERE AccountId = @AccountId", connection)
-            gridcommand.Parameters.AddWithValue("@AccountId", account_id)
+                            Dim transactionsReader As SqlDataReader = transactionsCommand.ExecuteReader()
 
-            Dim grid_reader As SqlDataReader = gridcommand.ExecuteReader()
+                            ' Bind the SqlDataReader to the GridView
+                            gridViewTransactions.DataSource = transactionsReader
+                            gridViewTransactions.DataBind()
 
-            ' Bind the SqlDataReader to the GridView
-            gridViewTransactions.DataSource = grid_reader
-            gridViewTransactions.DataBind()
+                            ' Close the SqlDataReader
+                            transactionsReader.Close()
+                        End Using
+                    End If
 
-            ' Close the SqlDataReader and the database connection
-            grid_reader.Close()
-            connection.Close()
-        End Using
+                    reader.Close()
+                End Using
+            End Using
+        Catch ex As Exception
+            ' Handle the exception, display an error message, or log the error
+            ' You can customize this section based on your application's requirements
+
+            MsgBox(ex.Message)
+        End Try
     End Sub
+
+
+
+
+
 
 
     Private Function GetUserIdFromCookie() As Integer
@@ -173,4 +142,13 @@ Public Class AccountStatement
         ' Return a default value or handle the case when the cookie or user ID is not available
         Return 0
     End Function
+
+    Protected Sub ddlAccountTypes_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim selectedAccountType As String = ddlAccountTypes.SelectedValue
+
+        ' Use the selectedAccountType to fetch the account information from the database
+        ' and display it in the respective labels or controls on your page.
+        ' You can use a similar approach as shown in your existing code to retrieve and display the information.
+    End Sub
+
 End Class
